@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Skorunuz: {{ user.last_score }}%</h2>
+  <p>En yüksek skorunuz: {{ user.high_score }}%</p>
+  <a href="{{ url_for('quiz') }}">Sınavı Tekrarla</a>
+{% endblock %}

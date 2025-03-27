@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="POST">
+  <!-- Kullanıcı Adı -->
+  <label>Adınız:</label>
+  <input type="text" name="username" required>
+  <hr>
+
+  <!-- Sorular -->
+  {% for q in questions %}
+    <p><b>{{ loop.index }}. {{ q.text }}</b></p>
+    {% for opt in q.options %}
+      <label>
+        <input type="radio" name="{{ q.id }}" value="{{ opt }}" required> {{ opt }}
+      </label><br>
+    {% endfor %}
+    <br>
+  {% endfor %}
+
+  <!-- Gönder Butonu -->
+  <button type="submit">Gönder</button>
+</form>
+{% endblock %}

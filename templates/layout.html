@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Python Quiz</h1>
+      {% if user %}
+        <div class="scores">
+          Kişisel Yüksek Skor: <b>{{ user.high_score }}%</b><br>
+          Genel Yüksek Skor: <b>{{ max_score }}%</b>
+        </div>
+      {% endif %}
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+      <p>Bu site, Python Pro Seviyesi Eğitmen Testi için oluşturulmuştur. Geliştirici: Salih Alper Çetin</p>
+    </footer>
+  </div>
+</body>
+</html>
