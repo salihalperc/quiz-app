@@ -5,20 +5,12 @@ from wtforms.validators import DataRequired
 from extensions import db
 from models import Question, User
 from models import User, Question
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.secret_key = 'secret'
-db.init_app(app)
-
-
-
 from flask import Flask, render_template, redirect, request, session, url_for
 from extensions import db
 from models import Question, User
 
 app = Flask(__name__)
-app.secret_key = 'gizli-anahtar'
+app.secret_key = SECRET_KEY_HERE
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 db.init_app(app)
 
